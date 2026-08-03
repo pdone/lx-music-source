@@ -1,0 +1,89 @@
+name: Star History
+
+on:
+  # 每天凌晨 01:17 UTC（北京时间 09:17）自动运行，避开整点高峰
+  schedule:
+    - cron: '17 1 * * *'
+  # 支持手动触发（含历史初始化选项）
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: '运行模式：daily=仅追加今日快照；init=首次初始化拉取全部历史（需 STAR_HISTORY_TOKEN）'
+        required: true
+        default: 'daily'
+        type: choice
+        options:
+          - daily
+          - init
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # 第一步：从 main 分支取出脚本（脚本本身存在仓库里）
+      - name: Checkout main for scripts
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+          persist-credentials: true
+          path: main-src
+
+      # 第二步：切到 star-history orphan 分支（不存在则创建）
+      - name: Prepare orphan branch (star-history)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # 克隆当前仓库到工作目录（浅克隆）
+          rm -rf repo && cp -r main-src repo
+          cd repo
+          # 清空工作区，准备作为 orphan 分支
+          git checkout --orphan star-history 2>/dev/null || git checkout star-history
+          # 尝试拉取远程 star-history 分支（首次不存在会失败，忽略）
+          git fetch origin star-history 2>/dev/null || true
+          if git rev-parse --verify origin/star-history >/dev/null 2>&1; then
+            # 远程分支存在，重置到它
+            git reset --hard origin/star-history
+          else
+            # 首次创建：清空所有文件
+            git rm -rf . 2>/dev/null || true
+            rm -rf *
+            rm -rf .github .gitignore 2>/dev/null || true
+          fi
+
+      # 第三步：daily 模式 - 追加今日快照
+      - name: Daily snapshot
+        if: ${{ github.event.inputs.mode != 'init' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OWNER: pdone
+          REPO: lx-music-source
+        run: |
+          node "$GITHUB_WORKSPACE/main-src/.github/star-history/generate-star-history.mjs"
+
+      # 第四步：init 模式 - 拉取全部历史
+      - name: Initialize full history
+        if: ${{ github.event.inputs.mode == 'init' }}
+        env:
+          STAR_HISTORY_TOKEN: ${{ secrets.STAR_HISTORY_TOKEN }}
+          OWNER: pdone
+          REPO: lx-music-source
+        run: |
+          node "$GITHUB_WORKSPACE/main-src/.github/star-history/init-star-history.mjs"
+
+      # 第五步：提交并推送到 star-history 分支
+      - name: Commit and push
+        run: |
+          cd "$GITHUB_WORKSPACE/repo"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add history.json star-history.svg 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: update star history $(date -u +%Y-%m-%d)"
+            git push origin star-history
+          fi

@@ -14,6 +14,7 @@ VERSIONS = {
     'lx': '4',
     'sixyin': '1.2.1',
     'juhe': '3',
+    'qdy': '9.3'
 }
 
 def main():

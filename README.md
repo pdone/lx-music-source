@@ -33,6 +33,11 @@ https://raw.githubusercontent.com/pdone/lx-music-source/main/grass/latest.js
 https://raw.githubusercontent.com/pdone/lx-music-source/main/juhe/latest.js
 ```
 
+### QDY
+```
+https://raw.githubusercontent.com/pdone/lx-music-source/main/qdy/latest.js
+```
+
 ## 在线导入 - 加速链接
 
 ### SixYin
@@ -65,6 +70,11 @@ https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/grass/l
 https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/juhe/latest.js
 ```
 
+### QDY
+```
+https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/qdy/latest.js
+```
+
 ### 其他加速站点
 
 当以上链接无法访问时，可将连接开头的 `https://ghproxy.net/` 替换为下边任一地址，然后重试。
@@ -74,6 +84,7 @@ https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/juhe/la
 - https://ghproxy.cn/
 - https://gh.api.99988866.xyz/
 - https://ghp.ci/
+- https://gh-proxy.org/
 
 > 加速链接仅推荐访问GitHub受限的用户使用，如果你的网络可以流畅访问GitHub，建议直接使用原始链接。
 
@@ -94,4 +105,7 @@ https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/juhe/la
 https://afdian.com/a/pdone
 
 ## Stargazers Over Time
-[![Stargazers over time](https://starchart.cc/pdone/lx-music-source.svg?variant=adaptive)](https://starchart.cc/pdone/lx-music-source)
+
+<a href="https://github.com/pdone/lx-music-source/tree/star-history">
+  <img alt="Star History Chart" src="https://raw.githubusercontent.com/pdone/lx-music-source/star-history/star-history.svg" />
+</a>

@@ -92,7 +92,7 @@ https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/qdy/lat
 - [SixYin](https://www.sixyin.com/)
 - [Huibq/keep-alive](https://github.com/Huibq/keep-alive/)
 - [LX](https://www.lxmusic.cc/)
-- [ikun](https://github.com/lxmusics/lx-music-api-server)
+- [ikun](https://github.com/MeoProject/lx-music-api-server)
 
 ## 项目地址
 - [lx-music-desktop](https://github.com/lyswhut/lx-music-desktop)

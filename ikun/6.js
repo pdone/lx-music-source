@@ -8,7 +8,7 @@
 const DEV_ENABLE = false
 const UPDATE_ENABLE = true
 const API_URL = "https://api.ikunshare.com"
-const API_KEY = `public_source`
+const API_KEY = ""
 const MUSIC_QUALITY = JSON.parse('{"kw":["128k","320k","flac","hires","atmos","atmos_plus","master"],"kg":["128k","320k","flac","hires","atmos","master"],"tx":["128k","320k","flac","hires","atmos","atmos_plus","master"],"wy":["128k","320k","flac","hires","atmos","master"],"mg":["128k","320k","flac","hires"]}');
 const MUSIC_SOURCE = Object.keys(MUSIC_QUALITY);
 

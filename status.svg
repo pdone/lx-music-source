@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="380" height="468" viewBox="0 0 380 468" role="img" aria-labelledby="health-title health-desc">
+  <title id="health-title">音源可用性</title>
+  <desc id="health-desc">共 15 个音源的状态检测结果，状态更新于 2026-10-29 13:26（北京时间）</desc>
+  <rect width="380" height="468" fill="#ffffff"/>
+  <text x="24" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="15" font-weight="600" fill="#1f2328">音源</text>
+  <text x="228" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="15" font-weight="600" fill="#1f2328">状态</text>
+  <line x1="24" y1="38" x2="356" y2="38" stroke="#d1d9e0" stroke-width="1"/>
+  <text x="24" y="63" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="400" fill="#1f2328">changqing</text>
+  <circle cx="228" cy="59" r="5" fill="#2da44e"/>
+  <text x="244" y="63" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="400" fill="#1f2328">可用</text>
+  <text x="24" y="89" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="400" fill="#1f2328">fish</text>
+  <circle cx="228" cy="85" r="5" fill="#2da44e"/>
+  <text x="244" y="89" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="400" fill="#1f2328">可用</text>
+  <text x="24" y="115" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="400" fill="#1f2328">helloworld</text>
+  <circle cx="228" cy="111" r="5" fill="#2da44e"/>
+  <text x="244" y="115" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="400" fill="#1f2328">可用</text>
+  <text x="24" y="141" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="400" fill="#1f2328">hyw</text>
+  <circle cx="228" cy="137" r="5" fill="#2da44e"/>
+  <text x="244" y="141" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="400" fill="#1f2328">可用</text>
+  <text x="24" y="167" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="400" fill="#1f2328">jiexiang</text>
+  <circle cx="228" cy="163" r="5" fill="#2da44e"/>
+  <text x="244" y="167" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="400" fill="#1f2328">可用</text>
+  <text x="24" y="193" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="400" fill="#1f2328">juhe</text>
+  <circle cx="228" cy="189" r="5" fill="#2da44e"/>
+  <text x="244" y="193" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="400" fill="#1f2328">可用</text>
+  <text x="24" y="219" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="400" fill="#1f2328">lx</text>
+  <circle cx="228" cy="215" r="5" fill="#2da44e"/>
+  <text x="244" y="219" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="400" fill="#1f2328">可用</text>
+  <text x="24" y="245" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="400" fill="#1f2328">qdy</text>
+  <circle cx="228" cy="241" r="5" fill="#2da44e"/>
+  <text x="244" y="245" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="400" fill="#1f2328">可用</text>
+  <text x="24" y="271" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="400" fill="#1f2328">xinghai</text>
+  <circle cx="228" cy="267" r="5" fill="#2da44e"/>
+  <text x="244" y="271" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="400" fill="#1f2328">可用</text>
+  <text x="24" y="297" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="400" fill="#1f2328">yuningxi</text>
+  <circle cx="228" cy="293" r="5" fill="#2da44e"/>
+  <text x="244" y="297" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="400" fill="#1f2328">可用</text>
+  <text x="24" y="323" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="400" fill="#1f2328">huibq</text>
+  <circle cx="228" cy="319" r="5" fill="#bf8700"/>
+  <text x="244" y="323" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="400" fill="#1f2328">异常</text>
+  <text x="24" y="349" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="400" fill="#1f2328">flower</text>
+  <circle cx="228" cy="345" r="5" fill="#cf222e"/>
+  <text x="244" y="349" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="400" fill="#1f2328">失效</text>
+  <text x="24" y="375" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="400" fill="#1f2328">grass</text>
+  <circle cx="228" cy="371" r="5" fill="#cf222e"/>
+  <text x="244" y="375" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="400" fill="#1f2328">失效</text>
+  <text x="24" y="401" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="400" fill="#1f2328">huanyin</text>
+  <circle cx="228" cy="397" r="5" fill="#cf222e"/>
+  <text x="244" y="401" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="400" fill="#1f2328">失效</text>
+  <text x="24" y="427" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="400" fill="#1f2328">ikun</text>
+  <circle cx="228" cy="423" r="5" fill="#cf222e"/>
+  <text x="244" y="427" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="400" fill="#1f2328">失效</text>
+  <line x1="24" y1="436" x2="356" y2="436" stroke="#d1d9e0" stroke-width="1"/>
+  <text x="24" y="456" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="400" fill="#59636e">状态更新于 2026-10-29 13:26（北京时间）</text>
+</svg>

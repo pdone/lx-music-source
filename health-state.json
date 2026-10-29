@@ -81,8 +81,8 @@
       "last_status": "可用"
     },
     "api.xcvts.cn": {
-      "consecutive_failures": 2,
-      "last_status": "失效"
+      "consecutive_failures": 0,
+      "last_status": "异常"
     },
     "api.xinghai-backend.cn": {
       "consecutive_failures": 2,
@@ -117,8 +117,8 @@
       "last_status": "可用"
     },
     "cyapi.top": {
-      "consecutive_failures": 0,
-      "last_status": "可用"
+      "consecutive_failures": 1,
+      "last_status": "异常"
     },
     "dl.stream.qqmusic.qq.com": {
       "consecutive_failures": 0,
@@ -158,11 +158,11 @@
     },
     "m.kuwo.cn": {
       "consecutive_failures": 0,
-      "last_status": "可用"
+      "last_status": "异常"
     },
     "mcp.nianxinxz.com": {
       "consecutive_failures": 0,
-      "last_status": "可用"
+      "last_status": "异常"
     },
     "mirror.com": {
       "consecutive_failures": 2,
@@ -173,8 +173,8 @@
       "last_status": "异常"
     },
     "music-api.gdstudio.xyz": {
-      "consecutive_failures": 2,
-      "last_status": "失效"
+      "consecutive_failures": 0,
+      "last_status": "可用"
     },
     "music-dl.sayqz.com": {
       "consecutive_failures": 2,
@@ -225,8 +225,8 @@
       "last_status": "可用"
     },
     "t.me": {
-      "consecutive_failures": 2,
-      "last_status": "失效"
+      "consecutive_failures": 0,
+      "last_status": "可用"
     },
     "tang.api.s01s.cn": {
       "consecutive_failures": 0,
@@ -283,7 +283,7 @@
     "flower": "失效",
     "grass": "失效",
     "helloworld": "可用",
-    "huanyin": "失效",
+    "huanyin": "异常",
     "huibq": "异常",
     "hyw": "可用",
     "ikun": "失效",
@@ -294,5 +294,5 @@
     "xinghai": "可用",
     "yuningxi": "可用"
   },
-  "updated_at": "2026-10-29 13:26"
+  "updated_at": "2026-10-29 13:42"
 }

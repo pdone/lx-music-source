@@ -5,7 +5,7 @@
       "last_status": "可用"
     },
     "13413.kstore.vip": {
-      "consecutive_failures": 1,
+      "consecutive_failures": 0,
       "last_status": "异常"
     },
     "175.27.166.236": {
@@ -81,8 +81,8 @@
       "last_status": "可用"
     },
     "api.xcvts.cn": {
-      "consecutive_failures": 1,
-      "last_status": "异常"
+      "consecutive_failures": 0,
+      "last_status": "可用"
     },
     "api.xinghai-backend.cn": {
       "consecutive_failures": 2,
@@ -105,8 +105,8 @@
       "last_status": "可用"
     },
     "app.c.nf.migu.cn": {
-      "consecutive_failures": 1,
-      "last_status": "异常"
+      "consecutive_failures": 0,
+      "last_status": "可用"
     },
     "c.wwwweb.top": {
       "consecutive_failures": 0,
@@ -129,8 +129,8 @@
       "last_status": "失效"
     },
     "gitee.com": {
-      "consecutive_failures": 0,
-      "last_status": "可用"
+      "consecutive_failures": 1,
+      "last_status": "异常"
     },
     "github.com": {
       "consecutive_failures": 0,
@@ -149,8 +149,8 @@
       "last_status": "异常"
     },
     "lxmusicapi.onrender.com": {
-      "consecutive_failures": 1,
-      "last_status": "异常"
+      "consecutive_failures": 2,
+      "last_status": "失效"
     },
     "m-api.ceseet.me": {
       "consecutive_failures": 0,
@@ -189,8 +189,8 @@
       "last_status": "异常"
     },
     "music.migu.cn": {
-      "consecutive_failures": 1,
-      "last_status": "异常"
+      "consecutive_failures": 0,
+      "last_status": "可用"
     },
     "music.nxinxz.com": {
       "consecutive_failures": 0,
@@ -249,8 +249,8 @@
       "last_status": "可用"
     },
     "wyapi.toubiec.cn": {
-      "consecutive_failures": 2,
-      "last_status": "失效"
+      "consecutive_failures": 0,
+      "last_status": "可用"
     },
     "y.qq.com": {
       "consecutive_failures": 0,
@@ -283,8 +283,8 @@
     "flower": "失效",
     "grass": "失效",
     "helloworld": "可用",
-    "huanyin": "异常",
-    "huibq": "异常",
+    "huanyin": "可用",
+    "huibq": "失效",
     "hyw": "可用",
     "ikun": "失效",
     "jiexiang": "可用",
@@ -294,5 +294,5 @@
     "xinghai": "可用",
     "yuningxi": "可用"
   },
-  "updated_at": "2026-11-02 01:08"
+  "updated_at": "2026-11-03 01:09"
 }

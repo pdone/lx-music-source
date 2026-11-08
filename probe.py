@@ -69,15 +69,22 @@ RE_HOST = re.compile(r'https?://((?:[A-Za-z0-9-]+\.)+(?:xn--[A-Za-z0-9-]+|[A-Za-
 RE_IPV4 = re.compile(r'https?://((?:\d{1,3}\.){3}\d{1,3})')
 # 裸 IPv4 字面量（探测时判断是否走 http，不含 scheme）
 RE_IPV4_LITERAL = re.compile(r'(?:\d{1,3}\.){3}\d{1,3}')
-# 裸主机名（不带 scheme）。仅用于匹配十六进制解码后的字符串文本——
-# 混淆阵列里 mirror.com 这类配置域名以裸形式存储，带 scheme 的正则匹配不到。
-# 不用于全文扫描，避免把代码里的普通标识符误判为域名。
-RE_BARE_HOST = re.compile(r'((?:[A-Za-z0-9-]+\.)+(?:xn--[A-Za-z0-9-]+|[A-Za-z]{2,}))')
 # 连续十六进制转义串（字符串阵列混淆，如 flower/grass）。
 # 用 chr(92) 构字面反斜杠，避免源码转义层级歧义。
 _BS = chr(92)
 RE_HEX_RUN = re.compile(r'(?:' + re.escape(_BS) + r'x[0-9a-fA-F]{2}){4,}')
 RE_HEX_BYTE = re.compile(re.escape(_BS) + r'x([0-9a-fA-F]{2})')
+# 带 scheme 的片段起始。混淆阵列把一条 URL 拆进多个数组元素时，
+# 只有首段带 scheme（如 'http://97.'），续段是纯数字与点（如 '64.37.235/'）。
+RE_SCHEME_HEAD = re.compile(r'^https?://')
+# 地址续段：仅数字与点，可带一个结尾斜杠。限定字符集是为了避免把
+# 相邻但无关的文本片段拼进 URL（如 'js.org/flo' 属于另一条 URL）。
+RE_ADDR_TAIL = re.compile(r'^[\d.]+/?$')
+# 拼合上限：单条 URL 最多 3 段（首段 + 2 个续段），续段候选数上限 32，
+# 拼合结果长度上限 256 字符，防止组合爆炸与跨值误拼。
+MAX_URL_PARTS = 3
+MAX_TAIL_CANDIDATES = 32
+MAX_URL_LEN = 256
 # 头部服务端下发配置块（lx 音源的 apiUrl 为 JSON 转义斜杠，明文正则匹配不到）
 RE_SERVER_CONFIG = re.compile(r"SERVER_SCRIPT_CONFIG'?\]?\s*=\s*(\{[^{}]*\})")
 
@@ -106,25 +113,65 @@ STATUS_CLASS = {
 }
 
 
-def extract_hosts(text):
-    """从音源源码中静态提取上游主机名，不执行脚本代码。"""
-    hosts = set()
-    for regex in (RE_HOST, RE_IPV4):
-        hosts.update(m.lower() for m in regex.findall(text))
-    # 十六进制转义字符串解码（flower/grass 的配置域名以此形式存储）
+def _decode_hex_fragments(text):
+    """按源码出现顺序返回十六进制转义串解码出的 ASCII 片段。"""
+    fragments = []
     for run in RE_HEX_RUN.findall(text):
         try:
             decoded = bytes(int(h, 16) for h in RE_HEX_BYTE.findall(run)).decode('ascii')
         except (ValueError, UnicodeDecodeError):
             continue
-        # 带 scheme 的完整 URL
+        fragments.append(decoded)
+    return fragments
+
+
+def _iter_join_parts(tails):
+    """产出地址续段的拼合组合：单段，以及两段（不超过 MAX_URL_PARTS 段）。"""
+    for tail in tails:
+        yield [tail]
+    if MAX_URL_PARTS < 3:
+        return
+    for first in tails:
+        for second in tails:
+            if first is not second:
+                yield [first, second]
+
+
+def _joined_ipv4_hosts(fragments):
+    """把被阵列切碎的地址片段拼回 IPv4 主机名。
+
+    混淆阵列的元素顺序不等于原文顺序（'http://97.' 的下一个元素往往是
+    另一条 URL 的片段，如 'js.org/flo'），因此不做顺序拼接，而以带 scheme
+    的首段为锚点与纯数字/点的续段组合；只有拼出完整 IPv4 才采纳，
+    避免把无关片段拼成一个看似合法的域名。
+    """
+    heads = [f for f in fragments if RE_SCHEME_HEAD.match(f)]
+    tails = [f for f in fragments if RE_ADDR_TAIL.fullmatch(f)][:MAX_TAIL_CANDIDATES]
+    hosts = set()
+    for head in heads:
+        for parts in _iter_join_parts(tails):
+            url = head + ''.join(parts)
+            if len(url) > MAX_URL_LEN:
+                continue
+            host = urlsplit(url).hostname
+            if host and RE_IPV4_LITERAL.fullmatch(host):
+                hosts.add(host.lower())
+    return hosts
+
+
+def extract_hosts(text):
+    """从音源源码中静态提取上游主机名，不执行脚本代码。"""
+    hosts = set()
+    for regex in (RE_HOST, RE_IPV4):
+        hosts.update(m.lower() for m in regex.findall(text))
+    # 十六进制转义字符串解码（flower/grass 的上游地址以此形式存储）
+    fragments = _decode_hex_fragments(text)
+    for decoded in fragments:
+        # 片段本身就是带 scheme 的完整 URL
         for regex in (RE_HOST, RE_IPV4):
             hosts.update(m.lower() for m in regex.findall(decoded))
-        # 裸主机名：仅当整条解码字符串恰好就是一个主机名时才采纳。
-        # 混淆阵列会把完整 URL 拆成相邻碎片（如 'js.org/flo' 是
-        # registry.npmjs.org 的尾段），带路径的碎片不能作为探测目标。
-        if '/' not in decoded and RE_BARE_HOST.fullmatch(decoded):
-            hosts.add(decoded.lower())
+    # 被阵列切碎的地址：拼回完整 IPv4（如 'http://97.' + '64.37.235/'）
+    hosts.update(_joined_ipv4_hosts(fragments))
     # 头部服务端下发配置（lx 音源的 apiUrl 是 JSON 转义斜杠，只能整块解析）
     for raw in RE_SERVER_CONFIG.findall(text):
         try:

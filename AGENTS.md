@@ -47,7 +47,7 @@ python probe.py --svg status.svg # 额外把报告写成 SVG 图片
 
 ### 添加新版本
 
-1. 将新版本 JS 文件放入对应源目录（如 `sixyin/1.2.2.js`）
+1. 将新版本 JS 文件放入对应源目录（如 `sixyin/1.2.2.js`）；文件名取自该文件头部 `@version` 去掉前导 `v`，上游随包文件名不作依据（如上游 `星海音乐源 v2.3.17.js` 的 `@version` 为 `v3.2.17`，入库名为 `3.2.17.js`）
 2. 编辑 `CreateLatest.py`，更新 `VERSIONS` 字典中的版本号
 3. 运行 `python CreateLatest.py`
 

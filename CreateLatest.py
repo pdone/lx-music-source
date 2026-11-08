@@ -26,8 +26,8 @@ VERSIONS = {
     'sixyin': '1.2.1',
     'juhe': '3',
     'qdy': '9.3',
-    'xinghai': '2.3.15',
-    'yuningxi': '1.2.2'
+    'xinghai': '3.2.18',
+    'yuningxi': '1.2.5'
 }
 
 def main():

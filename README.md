@@ -261,10 +261,10 @@ https://gh-proxy.org/raw.githubusercontent.com/pdone/lx-music-source/main/yuning
 - XingLan（星澜聚合音源 by 星澜团队）
 
 ## 项目地址
-- [lx-music-desktop](https://github.com/lyswhut/lx-music-desktop)
-- [lx-music-mobile](https://github.com/lyswhut/lx-music-mobile)
-- [lx-music-sync-server](https://github.com/lyswhut/lx-music-sync-server)
-- [any-listen](https://github.com/any-listen/any-listen)
+- [lx-music-desktop](https://github.com/lyswhut/lx-music-desktop) - 洛雪音乐桌面版（Windows / macOS / Linux）
+- [lx-music-mobile](https://github.com/lyswhut/lx-music-mobile) - 洛雪音乐移动版（Android / iOS）
+- [lx-music-sync-server](https://github.com/lyswhut/lx-music-sync-server) - 洛雪音乐同步服务端，用于多设备间同步播放列表等数据
+- [any-listen](https://github.com/any-listen/any-listen) - 基于 Web 的在线音乐播放器，支持自建服务与多端访问
 
 ## Stargazers Over Time
 

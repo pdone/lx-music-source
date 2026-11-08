@@ -17,6 +17,17 @@ https://raw.githubusercontent.com/pdone/lx-music-source/main/changqing/latest.js
 https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/changqing/latest.js
 ```
 
+<a id="feichangdao"></a>
+### FeiChangDao
+
+```
+https://raw.githubusercontent.com/pdone/lx-music-source/main/feichangdao/latest.js
+```
+
+```
+https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/feichangdao/latest.js
+```
+
 <a id="fish"></a>
 ### Fish
 
@@ -149,6 +160,17 @@ https://raw.githubusercontent.com/pdone/lx-music-source/main/qdy/latest.js
 https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/qdy/latest.js
 ```
 
+<a id="qingliang"></a>
+### QingLiang
+
+```
+https://raw.githubusercontent.com/pdone/lx-music-source/main/qingliang/latest.js
+```
+
+```
+https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/qingliang/latest.js
+```
+
 <a id="sixyin"></a>
 ### SixYin
 
@@ -158,6 +180,17 @@ https://raw.githubusercontent.com/pdone/lx-music-source/main/sixyin/latest.js
 
 ```
 https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/sixyin/latest.js
+```
+
+<a id="suyin"></a>
+### SuYin
+
+```
+https://raw.githubusercontent.com/pdone/lx-music-source/main/suyin/latest.js
+```
+
+```
+https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/suyin/latest.js
 ```
 
 <a id="xinghai"></a>
@@ -211,6 +244,9 @@ https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/yuningx
 - Fish（fish_music by 大鱼吃小鱼）
 - HelloWorld（by hello world）
 - YuNingXi（lx-玉宁熙-Pro by ynx）
+- FeiChangDao（非常刀 by 群主要进去）
+- QingLiang（轻量音源（四平台多源并行）by 本地定制）
+- SuYin（溯音音源 by 竹佀）
 
 ## 项目地址
 - [lx-music-desktop](https://github.com/lyswhut/lx-music-desktop)

@@ -13,6 +13,7 @@ if hasattr(sys.stdout, 'reconfigure'):
 # Latest Version Numbers
 VERSIONS = {
     'changqing': '1.3.0',
+    'feichangdao': '5',
     'fish': '1.9.0',
     'flower': '1',
     'grass': '1',
@@ -24,8 +25,10 @@ VERSIONS = {
     'jiexiang': '2.3.0',
     'lx': '7',
     'sixyin': '1.2.1',
+    'suyin': '1',
     'juhe': '3',
     'qdy': '9.3',
+    'qingliang': '2.1.0',
     'xinghai': '3.2.18',
     'yuningxi': '1.2.5'
 }

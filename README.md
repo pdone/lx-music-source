@@ -204,6 +204,17 @@ https://raw.githubusercontent.com/pdone/lx-music-source/main/xinghai/latest.js
 https://gh-proxy.org/raw.githubusercontent.com/pdone/lx-music-source/main/xinghai/latest.js
 ```
 
+<a id="xinglan"></a>
+### XingLan
+
+```
+https://raw.githubusercontent.com/pdone/lx-music-source/main/xinglan/latest.js
+```
+
+```
+https://gh-proxy.org/raw.githubusercontent.com/pdone/lx-music-source/main/xinglan/latest.js
+```
+
 <a id="yuningxi"></a>
 ### YuNingXi
 
@@ -247,6 +258,7 @@ https://gh-proxy.org/raw.githubusercontent.com/pdone/lx-music-source/main/yuning
 - FeiChangDao（非常刀 by 群主要进去）
 - QingLiang（轻量音源（四平台多源并行）by 本地定制）
 - SuYin（溯音音源 by 竹佀）
+- XingLan（星澜聚合音源 by 星澜团队）
 
 ## 项目地址
 - [lx-music-desktop](https://github.com/lyswhut/lx-music-desktop)

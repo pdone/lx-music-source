@@ -1,8 +1,12 @@
 {
   "hosts": {
     "103.79.184.97": {
-      "consecutive_failures": 1,
-      "last_status": "异常"
+      "consecutive_failures": 0,
+      "last_status": "可用"
+    },
+    "106.55.0.102": {
+      "consecutive_failures": 0,
+      "last_status": "可用"
     },
     "13413.kstore.vip": {
       "consecutive_failures": 0,
@@ -16,19 +20,27 @@
       "consecutive_failures": 0,
       "last_status": "可用"
     },
+    "97.64.37.235": {
+      "consecutive_failures": 0,
+      "last_status": "异常"
+    },
     "a.aa.cab": {
       "consecutive_failures": 0,
       "last_status": "可用"
-    },
-    "anymatch.kuwo.cn": {
-      "consecutive_failures": 0,
-      "last_status": "异常"
     },
     "api-v2.yuafeng.cn": {
       "consecutive_failures": 0,
       "last_status": "可用"
     },
+    "api-vehicle.volcengine.com": {
+      "consecutive_failures": 0,
+      "last_status": "可用"
+    },
     "api.317ak.cn": {
+      "consecutive_failures": 0,
+      "last_status": "可用"
+    },
+    "api.bileizhen.top": {
       "consecutive_failures": 0,
       "last_status": "可用"
     },
@@ -66,19 +78,23 @@
     },
     "api.music.lerd.dpdns.org": {
       "consecutive_failures": 0,
-      "last_status": "异常"
+      "last_status": "可用"
     },
     "api.nki.pw": {
       "consecutive_failures": 0,
       "last_status": "可用"
+    },
+    "api.qishui.com": {
+      "consecutive_failures": 0,
+      "last_status": "异常"
     },
     "api.vkeys.cn": {
       "consecutive_failures": 0,
       "last_status": "可用"
     },
     "api.vsaa.cn": {
-      "consecutive_failures": 0,
-      "last_status": "可用"
+      "consecutive_failures": 1,
+      "last_status": "异常"
     },
     "api.xcvts.cn": {
       "consecutive_failures": 0,
@@ -92,6 +108,10 @@
       "consecutive_failures": 2,
       "last_status": "失效"
     },
+    "api.xunhuisi.store": {
+      "consecutive_failures": 0,
+      "last_status": "可用"
+    },
     "api.yaohud.cn": {
       "consecutive_failures": 0,
       "last_status": "可用"
@@ -101,6 +121,10 @@
       "last_status": "失效"
     },
     "api.yunmge.com": {
+      "consecutive_failures": 0,
+      "last_status": "可用"
+    },
+    "api.yutangxiaowu.cn": {
       "consecutive_failures": 0,
       "last_status": "可用"
     },
@@ -124,21 +148,17 @@
       "consecutive_failures": 0,
       "last_status": "异常"
     },
+    "ffapi.cn": {
+      "consecutive_failures": 0,
+      "last_status": "可用"
+    },
     "gc.kxwa.top": {
       "consecutive_failures": 2,
       "last_status": "失效"
     },
-    "gitee.com": {
-      "consecutive_failures": 0,
-      "last_status": "可用"
-    },
     "github.com": {
       "consecutive_failures": 0,
       "last_status": "可用"
-    },
-    "img1.kwcdn.kuwo.cn": {
-      "consecutive_failures": 2,
-      "last_status": "失效"
     },
     "interface3.music.163.com": {
       "consecutive_failures": 0,
@@ -156,17 +176,17 @@
       "consecutive_failures": 0,
       "last_status": "可用"
     },
-    "m.kuwo.cn": {
+    "m.kugou.com": {
       "consecutive_failures": 0,
-      "last_status": "异常"
+      "last_status": "可用"
     },
     "mcp.nianxinxz.com": {
       "consecutive_failures": 0,
       "last_status": "异常"
     },
-    "mirror.com": {
-      "consecutive_failures": 2,
-      "last_status": "失效"
+    "metings.qjqq.cn": {
+      "consecutive_failures": 0,
+      "last_status": "可用"
     },
     "mobi.kuwo.cn": {
       "consecutive_failures": 0,
@@ -188,6 +208,10 @@
       "consecutive_failures": 0,
       "last_status": "异常"
     },
+    "music.lzmhhh.com": {
+      "consecutive_failures": 0,
+      "last_status": "可用"
+    },
     "music.migu.cn": {
       "consecutive_failures": 0,
       "last_status": "可用"
@@ -204,6 +228,10 @@
       "consecutive_failures": 0,
       "last_status": "异常"
     },
+    "ncm.kangqiovo.com": {
+      "consecutive_failures": 0,
+      "last_status": "可用"
+    },
     "nmobi.kuwo.cn": {
       "consecutive_failures": 0,
       "last_status": "异常"
@@ -219,6 +247,14 @@
     "qm.qq.com": {
       "consecutive_failures": 0,
       "last_status": "异常"
+    },
+    "qt.haitangw.net": {
+      "consecutive_failures": 0,
+      "last_status": "异常"
+    },
+    "search.kuwo.cn": {
+      "consecutive_failures": 0,
+      "last_status": "可用"
     },
     "source.shiqianjiang.cn": {
       "consecutive_failures": 0,
@@ -244,6 +280,10 @@
       "consecutive_failures": 0,
       "last_status": "可用"
     },
+    "www.kuwo.cn": {
+      "consecutive_failures": 0,
+      "last_status": "异常"
+    },
     "wwwapi.kugou.com": {
       "consecutive_failures": 0,
       "last_status": "可用"
@@ -260,10 +300,6 @@
       "consecutive_failures": 0,
       "last_status": "可用"
     },
-    "ynx.de5.net": {
-      "consecutive_failures": 2,
-      "last_status": "失效"
-    },
     "yy.zddyr.top": {
       "consecutive_failures": 0,
       "last_status": "可用"
@@ -279,20 +315,23 @@
   },
   "sources": {
     "changqing": "可用",
+    "feichangdao": "可用",
     "fish": "可用",
-    "flower": "失效",
-    "grass": "失效",
+    "flower": "异常",
+    "grass": "异常",
     "helloworld": "可用",
     "huanyin": "可用",
     "huibq": "可用",
     "hyw": "可用",
     "ikun": "失效",
     "jiexiang": "可用",
-    "juhe": "异常",
+    "juhe": "可用",
     "lx": "可用",
     "qdy": "可用",
+    "qingliang": "可用",
+    "suyin": "可用",
     "xinghai": "可用",
-    "yuningxi": "可用"
+    "xinglan": "可用"
   },
-  "updated_at": "2026-11-05 01:09"
+  "updated_at": "2026-11-08 14:50"
 }

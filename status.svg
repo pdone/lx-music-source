@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="380" height="546" viewBox="0 0 380 546" role="img" aria-labelledby="health-title health-desc">
   <title id="health-title">音源可用性</title>
-  <desc id="health-desc">共 18 个音源的状态检测结果，状态更新于 2026-11-12 01:10（北京时间）</desc>
+  <desc id="health-desc">共 18 个音源的状态检测结果，状态更新于 2026-11-13 01:09（北京时间）</desc>
 <style>
   .bg{fill:#ffffff}
   .rule{stroke:#e5e7eb;stroke-width:1}
@@ -47,36 +47,36 @@
   <text class="fg cell" x="24" y="245">jiexiang</text>
   <circle class="dot ok" cx="228" cy="241" r="5"/>
   <text class="fg cell" x="244" y="245">可用</text>
-  <text class="fg cell" x="24" y="271">qdy</text>
+  <text class="fg cell" x="24" y="271">lx</text>
   <circle class="dot ok" cx="228" cy="267" r="5"/>
   <text class="fg cell" x="244" y="271">可用</text>
-  <text class="fg cell" x="24" y="297">qingliang</text>
+  <text class="fg cell" x="24" y="297">qdy</text>
   <circle class="dot ok" cx="228" cy="293" r="5"/>
   <text class="fg cell" x="244" y="297">可用</text>
-  <text class="fg cell" x="24" y="323">suyin</text>
+  <text class="fg cell" x="24" y="323">qingliang</text>
   <circle class="dot ok" cx="228" cy="319" r="5"/>
   <text class="fg cell" x="244" y="323">可用</text>
-  <text class="fg cell" x="24" y="349">xinghai</text>
+  <text class="fg cell" x="24" y="349">suyin</text>
   <circle class="dot ok" cx="228" cy="345" r="5"/>
   <text class="fg cell" x="244" y="349">可用</text>
-  <text class="fg cell" x="24" y="375">xinglan</text>
+  <text class="fg cell" x="24" y="375">xinghai</text>
   <circle class="dot ok" cx="228" cy="371" r="5"/>
   <text class="fg cell" x="244" y="375">可用</text>
-  <text class="fg cell" x="24" y="401">flower</text>
-  <circle class="dot warn" cx="228" cy="397" r="5"/>
-  <text class="fg cell" x="244" y="401">异常</text>
-  <text class="fg cell" x="24" y="427">grass</text>
+  <text class="fg cell" x="24" y="401">xinglan</text>
+  <circle class="dot ok" cx="228" cy="397" r="5"/>
+  <text class="fg cell" x="244" y="401">可用</text>
+  <text class="fg cell" x="24" y="427">flower</text>
   <circle class="dot warn" cx="228" cy="423" r="5"/>
   <text class="fg cell" x="244" y="427">异常</text>
-  <text class="fg cell" x="24" y="453">juhe</text>
+  <text class="fg cell" x="24" y="453">grass</text>
   <circle class="dot warn" cx="228" cy="449" r="5"/>
   <text class="fg cell" x="244" y="453">异常</text>
-  <text class="fg cell" x="24" y="479">lx</text>
+  <text class="fg cell" x="24" y="479">juhe</text>
   <circle class="dot warn" cx="228" cy="475" r="5"/>
   <text class="fg cell" x="244" y="479">异常</text>
   <text class="fg cell" x="24" y="505">ikun</text>
   <circle class="dot dead" cx="228" cy="501" r="5"/>
   <text class="fg cell" x="244" y="505">失效</text>
   <line class="rule" x1="24" y1="514" x2="356" y2="514"/>
-  <text class="muted foot" x="24" y="534">状态更新于 2026-11-12 01:10（北京时间）</text>
+  <text class="muted foot" x="24" y="534">状态更新于 2026-11-13 01:09（北京时间）</text>
 </svg>

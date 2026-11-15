@@ -170,7 +170,7 @@
     },
     "lxmusicapi.onrender.com": {
       "consecutive_failures": 0,
-      "last_status": "可用"
+      "last_status": "异常"
     },
     "m-api.ceseet.me": {
       "consecutive_failures": 0,
@@ -238,7 +238,7 @@
     },
     "oiapi.net": {
       "consecutive_failures": 0,
-      "last_status": "可用"
+      "last_status": "异常"
     },
     "proxy.qishui.vsaa.cn": {
       "consecutive_failures": 2,
@@ -321,7 +321,7 @@
     "grass": "异常",
     "helloworld": "可用",
     "huanyin": "可用",
-    "huibq": "可用",
+    "huibq": "异常",
     "hyw": "可用",
     "ikun": "失效",
     "jiexiang": "可用",
@@ -333,5 +333,5 @@
     "xinghai": "可用",
     "xinglan": "可用"
   },
-  "updated_at": "2026-11-13 01:09"
+  "updated_at": "2026-11-16 01:07"
 }

@@ -1,6 +1,11 @@
 # lx-music-source
 洛雪音乐源，内容源于网络
 
+> [!WARNING]
+> 已下架 **LX（独家音源）**：该脚本包含在具备 Node 能力的宿主中执行 `shutdown` 强制关机的恶意逻辑，请勿再导入。
+> 若已导入，请立即在客户端删除该音源。
+> 详情与复现证据见 [#16](https://github.com/pdone/lx-music-source/issues/16)。
+
 ## 在线导入
 
 > [!TIP]
@@ -138,17 +143,6 @@ https://raw.githubusercontent.com/pdone/lx-music-source/main/juhe/latest.js
 https://gh-proxy.org/raw.githubusercontent.com/pdone/lx-music-source/main/juhe/latest.js
 ```
 
-<a id="lx"></a>
-### LX
-
-```
-https://raw.githubusercontent.com/pdone/lx-music-source/main/lx/latest.js
-```
-
-```
-https://gh-proxy.org/raw.githubusercontent.com/pdone/lx-music-source/main/lx/latest.js
-```
-
 <a id="qdy"></a>
 ### QDY
 
@@ -245,7 +239,6 @@ https://gh-proxy.org/raw.githubusercontent.com/pdone/lx-music-source/main/yuning
 
 ## 数据来源
 - [Huibq/keep-alive](https://github.com/Huibq/keep-alive/)
-- [LX](https://www.lxmusic.cc/)
 - [HYWmusic 公益版](https://github.com/Macrohard0001/HYWmusic_source)
 - [JieXiang](https://github.com/haonanren118/jiexiang-Music-Source)
 - ChangQing（长青SVIP音源 by 元力菌）

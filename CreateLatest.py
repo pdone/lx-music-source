@@ -23,7 +23,6 @@ VERSIONS = {
     'hyw': '1.2.0',
     'ikun': '22',
     'jiexiang': '2.3.0',
-    'lx': '7',
     'sixyin': '1.2.1',
     'suyin': '1',
     'juhe': '3',

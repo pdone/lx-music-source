@@ -28,7 +28,7 @@ VERSIONS = {
     'juhe': '3',
     'qdy': '9.3',
     'qingliang': '2.1.0',
-    'xinghai': '3.2.18',
+    'xinghai': '3.2.20',
     'xinglan': '4.0.2',
     'yuningxi': '1.2.5'
 }

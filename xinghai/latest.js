@@ -1,13 +1,12 @@
 /*!
  * @name         星海音乐源
- * @description  GDAPI | 聚合 | ChKSz API | 全平台支持 24bit FLAC，网易、酷狗、QQ 最高支持母带｜建议与反馈：https://yy.zddyr.top/survey.php?k=192ee708d4721bc9077f8f1738296c1b
- * @version      v3.2.18
+ * @description  GDAPI | 聚合 | ChKSz API | 全平台支持 24bit FLAC，网易、酷狗、QQ 最高支持母带｜建议与反馈：https://yy1.zddyr.top/survey.php?k=192ee708d4721bc9077f8f1738296c1b
+ * @version      v3.2.20
  * @author       万去了了 / 科学大魔王
  * @homepage     https://zddyr.top/
  * @see          http://gc.kxwa.top/
- * @lastUpdate   2026-11-08
- * @update       优化酷我：修复部分歌曲取链接失败
- * @update       使用体验反馈：https://yy.zddyr.top/survey.php?k=192ee708d4721bc9077f8f1738296c1b
+ * @lastUpdate   2026-11-17
+ * @update       新增启动域名连通性日志与更新服务失败提示
  * @license      仅供学习交流，请支持正版
  */
 
@@ -35,7 +34,8 @@ const LICENSE_CONFIG = {
 
 const URL_CONFIG = {
     domains: {
-        primary: 'yy.zddyr.top',
+        primary: 'yy1.zddyr.top',   // 主 API（新域名，避开部分地区 DNS 拦截）
+        backup:  'yy.zddyr.top',    // 备用 API（原域名，主域名不可用时自动回退）
         gdStudio: 'music-api.gdstudio.xyz',
         chkszNew: 'api.chksz.com'
     },
@@ -66,7 +66,22 @@ const buildUrl = (domainKey, pathKey, extraQuery = '') => {
     return url;
 };
 
-const SCRIPT_VERSION = 'v3.2.18';
+// 主域名在部分地区会被 DNS 污染/拦截：网络失败或 5xx 时自动切到备用域名重试一次。
+// 只作用于主 API 域名的请求，第三方接口（GD / ChkSz）不受影响。
+const PRIMARY_HOST = URL_CONFIG.domains.primary;
+const BACKUP_HOST = URL_CONFIG.domains.backup;
+const requestWithFallback = (url, options, callback) => {
+    const backupUrl = url.includes(PRIMARY_HOST) ? url.replace(PRIMARY_HOST, BACKUP_HOST) : null;
+    if (!backupUrl || backupUrl === url) return request(url, options, callback);
+    request(url, options, (err, resp) => {
+        const failed = !!err || !resp ||
+            (typeof resp.statusCode === 'number' && resp.statusCode >= 500);
+        if (!failed) return callback(err, resp);
+        request(backupUrl, options, callback);
+    });
+};
+
+const SCRIPT_VERSION = 'v3.2.20';
 const SCRIPT_NAME = 'XingHaiMusicSource';
 const SOURCE_MAP = { tx: 'qq', mg: 'migu', kw: 'kw', kg: 'kg', qs: 'qs' };
 const PLATFORM_NAMES = { wy: '网易云音乐', tx: 'QQ音乐', kw: '酷我音乐', kg: '酷狗音乐', mg: '咪咕音乐', qs: '汽水音乐' };
@@ -194,7 +209,7 @@ function fetchServerToken() {
     if (!deviceId) deviceId = generateDeviceId();
     const url = `${buildUrl('primary', 'backend')}token.php?device_id=${encodeURIComponent(deviceId)}`;
     return new Promise((resolve) => {
-        request(url, {
+        requestWithFallback(url, {
             method: 'GET',
             timeout: 6000,
             headers: { 'User-Agent': 'lx-music', 'X-Client': clientHeader || 'LX-Music-Mobile' }
@@ -243,7 +258,7 @@ const httpFetch = async (url, options = {}, retried = false) => {
     if (code) headers['X-License'] = code;
     if (!headers['User-Agent']) headers['User-Agent'] = 'lx-music';
     const out = await new Promise((resolve, reject) => {
-        request(url, { ...options, headers }, (err, resp) => {
+        requestWithFallback(url, { ...options, headers }, (err, resp) => {
             if (err) return reject(err);
             resolve({ body: safeParseBody(resp.body), statusCode: resp.statusCode, headers: resp.headers || {} });
         });
@@ -494,6 +509,16 @@ async function fetchMusicUrl(source, musicInfo, quality) {
 
 // -------------------- 更新检查 --------------------
 async function checkUpdate() {
+    // 连不上更新服务时给用户一个明确提示，避免静默失败让人误以为已是最新。
+    const manualUpdateUrl = 'https://' + URL_CONFIG.domains.primary + URL_CONFIG.paths.update;
+    const alertManual = () => {
+        try {
+            send(EVENT_NAMES.updateAlert, {
+                log: '无法连接到服务器，请手动查看更新',
+                updateUrl: manualUpdateUrl
+            });
+        } catch (_) {}
+    };
     try {
         const resp = await httpFetch(
             buildUrl('primary', 'version') + '?ver=' + encodeURIComponent(SCRIPT_VERSION),
@@ -504,8 +529,41 @@ async function checkUpdate() {
                 log: resp.body.changelog || resp.body.message || `发现新版本 ${resp.body.version || ''}`,
                 updateUrl: resp.body.update_url
             });
+        } else if (resp.statusCode !== 200) {
+            // 服务返回异常状态（5xx 等），同样视为更新服务不可用
+            alertManual();
         }
-    } catch (e) {}
+    } catch (e) {
+        // 网络层连不上（DNS / 超时 / 拿不到令牌）时提示手动查看更新
+        alertManual();
+    }
+}
+
+// -------------------- 启动连通性自检 --------------------
+// 启动时并行探测配置里的所有域名，把状态/耗时直接打到日志，方便排查 DNS 与网络问题。
+// 用裸 request（不带令牌），只测连通性；成功失败都不影响插件初始化。
+async function probeDomains() {
+    const entries = Object.keys(URL_CONFIG.domains).map((key) => [key, URL_CONFIG.domains[key]]);
+    const tasks = entries.map(([key, host]) => new Promise((resolve) => {
+        const url = `https://${host}/`;
+        const t0 = Date.now();
+        let done = false;
+        let timer = null;
+        const finish = (line) => {
+            if (done) return;
+            done = true;
+            if (timer) { try { clearTimeout(timer); } catch (e) {} }
+            try { console.log(line); } catch (e) {}
+            resolve(line);
+        };
+        try { timer = setTimeout(() => finish(`[星海连通性] ${key}(${host}): 超时(>3.5s)`), 3500); } catch (e) {}
+        request(url, { method: 'GET', timeout: 3000, headers: { 'User-Agent': 'lx-music' } }, (err, resp) => {
+            const ms = Date.now() - t0;
+            if (err) return finish(`[星海连通性] ${key}(${host}): 失败 - ${err.message || err} (${ms}ms)`);
+            finish(`[星海连通性] ${key}(${host}): HTTP ${resp && resp.statusCode} (${ms}ms)`);
+        });
+    }));
+    try { await Promise.all(tasks); } catch (e) {}
 }
 
 // -------------------- 事件处理 --------------------
@@ -533,6 +591,7 @@ on(EVENT_NAMES.request, async ({ action, source, info }) => {
     const sources = {};
     availablePlatforms.forEach(p => { sources[p] = { name: PLATFORM_NAMES[p], type: 'music', actions: ['musicUrl', 'lyric', 'pic'], qualitys: MUSIC_QUALITIES[p] }; });
     send(EVENT_NAMES.inited, { openDevMode: false, status: true, sources });
+    probeDomains();
     fetchIp();
     checkUpdate();
 })();

@@ -37,8 +37,8 @@
       "last_status": "可用"
     },
     "api.317ak.cn": {
-      "consecutive_failures": 0,
-      "last_status": "可用"
+      "consecutive_failures": 1,
+      "last_status": "异常"
     },
     "api.bileizhen.top": {
       "consecutive_failures": 0,
@@ -89,8 +89,8 @@
       "last_status": "异常"
     },
     "api.vkeys.cn": {
-      "consecutive_failures": 0,
-      "last_status": "可用"
+      "consecutive_failures": 1,
+      "last_status": "异常"
     },
     "api.vsaa.cn": {
       "consecutive_failures": 0,
@@ -265,8 +265,8 @@
       "last_status": "可用"
     },
     "tang.api.s01s.cn": {
-      "consecutive_failures": 0,
-      "last_status": "可用"
+      "consecutive_failures": 1,
+      "last_status": "异常"
     },
     "u.y.qq.com": {
       "consecutive_failures": 0,
@@ -293,14 +293,18 @@
       "last_status": "可用"
     },
     "y.qq.com": {
-      "consecutive_failures": 0,
-      "last_status": "可用"
+      "consecutive_failures": 1,
+      "last_status": "异常"
     },
     "yinyue.haitangw.net": {
+      "consecutive_failures": 1,
+      "last_status": "异常"
+    },
+    "yy.zddyr.top": {
       "consecutive_failures": 0,
       "last_status": "可用"
     },
-    "yy.zddyr.top": {
+    "yy1.zddyr.top": {
       "consecutive_failures": 0,
       "last_status": "可用"
     },
@@ -314,7 +318,7 @@
     }
   },
   "sources": {
-    "changqing": "可用",
+    "changqing": "异常",
     "feichangdao": "可用",
     "fish": "可用",
     "flower": "异常",
@@ -332,5 +336,5 @@
     "xinghai": "可用",
     "xinglan": "可用"
   },
-  "updated_at": "2026-11-23 01:08"
+  "updated_at": "2026-11-27 01:09"
 }
